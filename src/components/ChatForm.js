@@ -19,7 +19,7 @@ function ChatForm({onMesajGönder}){ // (App.js)parent(üst, ebeveyn) bileşende
     };
 
     return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="mb-4">
       <textarea
         rows={4} // satır yüksekliği
         className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
