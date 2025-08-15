@@ -7,8 +7,9 @@ function EtkinlikList({ baslik, etkinlikler }) {
       {etkinlikler.length === 0 ? (
         <p className="text-gray-500 italic">Gösterilecek etkinlik yok.</p>
       ) : (
-        <ul className="list-disc list-inside space-y-3"> {/*ul: sırasız liste, li: listenin yani ul'nin ögeleridir */}
-          {etkinlikler.map((etkinlik) => (
+        <ul className="list-disc list-inside space-y-3"> {/*ul: sırasız liste, li: listenin yani ul'nin ögeleridir */}         
+          {/*.map ile etkinlikler listesini tek tek dolaşıp her etkinlik li olarak ekrana yazılır */}
+          {etkinlikler.map((etkinlik) => ( 
             <li key={etkinlik.id} className="text-gray-700">
               <strong className="font-semibold">{etkinlik.baslik}</strong>: {etkinlik.aciklama} —{" "}
               <span className="text-sm text-gray-500">

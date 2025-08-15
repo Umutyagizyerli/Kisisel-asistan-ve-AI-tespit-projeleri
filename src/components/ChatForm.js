@@ -1,6 +1,6 @@
 import React, {useState} from "react"; // bileşen içinde state(durum) tanımlamak için useState hook'u kullanırız
 
-function ChatForm({onMesajGönder}){ // (App.js)parent(üst, ebeveyn) bileşenden onMesajGönder fonksiyonu prop olarak geliyor.
+function ChatForm({onMesajGonder}){ // (App.js)parent(üst, ebeveyn) bileşenden onMesajGönder fonksiyonu prop olarak geliyor.
     // bu fonksiyon mesajı backende göndermek için kullanılacak
 
     // useState önemli
@@ -11,9 +11,9 @@ function ChatForm({onMesajGönder}){ // (App.js)parent(üst, ebeveyn) bileşende
 
     //handleSubmit: form gönderildiğinde çalışacak fonksiyon
     const handleSubmit = (e) =>{ // buradaki e event(olay) nesnesidir, react'ta kullanıcı etkileşimi gerçekleştiğinde(butona bas, inputa yaz vb), otomatik olarak bu event nesnesi fonksiyona parametre olarak verilir
-        e.preventDefault(); // tarayıcının formu sayfayı yenileyerek göndermesi engelleniyor
+        e.preventDefault(); // tarayıcının formu sayfayı yenileyerek göndermesi engelleniyor, f5 atılmıyor yani her seferinde
         if(mesaj.trim()==="") return; //kullanıcı sadece boşluk girerse bile mesaj göndermesi engelleniyor, .trim(): baştaki ve sondaki boşlukları siler
-        onMesajGönder(mesaj);//üst bileşenden(parent) gelen onMesajGönder fonksiyonuna, kullanıcı mesajını parametre olarak verir
+        onMesajGonder(mesaj);//üst bileşenden(parent) gelen onMesajGönder fonksiyonuna, kullanıcı mesajını parametre olarak verir
         // bu sayede parent bileşen (App.js) bu mesajı alıp backend'e gönderiyor
         setMesaj(""); // mesaj gönderildikten sonra textarea'yı boşaltıyor
     };
@@ -25,7 +25,7 @@ function ChatForm({onMesajGönder}){ // (App.js)parent(üst, ebeveyn) bileşende
         className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
         placeholder="Mesajınızı yazın..."
         value={mesaj} // textarea'nın değeri state'e bağlı (controlled component)
-        onChange={(e) => setMesaj(e.target.value)} // kullanıcı yazdıkça setMesaj çağrılır ve state güncellenir
+        onChange={(e) => setMesaj(e.target.value)} // kullanıcı her tuşa bastıkça tetiklenir, setMesaj çağrılır ve state güncellenir
       />
       <button 
       type="submit"
