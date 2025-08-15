@@ -1,0 +1,4 @@
+com/umutyerli/kisisel_asistan/controller/NotController.class
+com/umutyerli/kisisel_asistan/entities/Not.class
+com/umutyerli/kisisel_asistan/services/NotService.class
+com/umutyerli/kisisel_asistan/repository/NotRepository.class
